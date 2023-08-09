@@ -1,7 +1,7 @@
 
 import React from 'react';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+/* import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg' */
 import Header from './Componets/Header';
 //import Encabezado from './Componets/Encabezado'
 import Card from './Componets/Card'
