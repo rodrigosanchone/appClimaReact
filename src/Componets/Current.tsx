@@ -44,24 +44,24 @@ const Current = () => {
             <div className="card bg-primary text-white" style={{ width: '30rem', height:'600px' }}>
                {data.state === 'Drizzle' ? (
                   <video className='video-fluid' autoPlay loop muted controls={false}>
-                  <source src='src/assets/drizzle.mp4' type='video/mp4' />
+                  <source src='.assets/drizzle.mp4' type='video/mp4' />
                   Your browser does not support the video tag.
                 </video>
                 ) :
                  (<></>)}
                 {data.state === 'Clouds' ? (
                   <video className='video-fluid' autoPlay loop muted controls={false}>
-                  <source src='./clima/assets/cloud.mp4' type='video/mp4' />
+                  <source src='assets/cloud.mp4' type='video/mp4' />
                   Your browser does not support the video tag.
                 </video>
                 ) :
                  (<></>)}
                 {data.state === 'Clear' ? (<video  autoPlay loop muted controls={false}>
-                    <source src='./clima/assets/clear.mp4' type='video/mp4' />
+                    <source src='assets/clear.mp4' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
                 {data.state === 'Rain' ? (<video  autoPlay loop muted controls={false}>
-                    <source src='./clima/assets/rain.mp4' type='video/mp4' />
+                    <source src='assets/rain.mp4' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
                 <h2 className="card-title text-center my-5">{data.name}</h2>
