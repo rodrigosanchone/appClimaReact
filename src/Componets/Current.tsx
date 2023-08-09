@@ -61,7 +61,7 @@ const Current = () => {
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
                 {data.state === 'Rain' ? (<video  autoPlay loop muted controls={false}>
-                    <source src='clima/assets/rain.mp4' type='video/mp4' />
+                    <source src='./clima/assets/rain.mp4' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
                 <h2 className="card-title text-center my-5">{data.name}</h2>
