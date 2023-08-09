@@ -44,7 +44,7 @@ const Current = () => {
             <div className="card bg-primary text-white" style={{ width: '30rem', height:'600px' }}>
                {data.state === 'Drizzle' ? (
                   <video className='video-fluid' autoPlay loop muted controls={false}>
-                  <source src='./src/assets/drizzle.mp4' type='video/mp4' />
+                  <source src='src/assets/drizzle.mp4' type='video/mp4' />
                   Your browser does not support the video tag.
                 </video>
                 ) :
