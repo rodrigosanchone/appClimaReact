@@ -51,13 +51,13 @@ const Current = () => {
                  (<></>)}
                 {data.state === 'Clouds' ? (
                   <video className='video-fluid' autoPlay loop muted controls={false}>
-                  <source src='clima/assets/cloud.mp4' type='video/mp4' />
+                  <source src='./clima/assets/cloud.mp4' type='video/mp4' />
                   Your browser does not support the video tag.
                 </video>
                 ) :
                  (<></>)}
                 {data.state === 'Clear' ? (<video  autoPlay loop muted controls={false}>
-                    <source src='clima/assets/clear.mp4' type='video/mp4' />
+                    <source src='./clima/assets/clear.mp4' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
                 {data.state === 'Rain' ? (<video  autoPlay loop muted controls={false}>
