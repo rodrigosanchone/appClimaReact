@@ -38,7 +38,7 @@ const Current = () => {
                 .catch(err => console.log(err));
         }
 
-    }, [location])
+    }, [])
     return (
         <div className='col d-flex justify-content-center my-5'>
             <div className="card bg-primary text-white" style={{ width: '30rem', height:'600px' }}>
@@ -51,17 +51,17 @@ const Current = () => {
                  (<></>)}
                 {data.state === 'Clouds' ? (
                   <video className='video-fluid' autoPlay loop muted controls={false}>
-                  <source src='public/assets/cloud.mp4' type='video/mp4' />
+                  <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/drizzle.mp4?alt=media&token=67b96842-e00d-4746-ba4f-89e10ab97801' type='video/mp4' />
                   Your browser does not support the video tag.
                 </video>
                 ) :
                  (<></>)}
                 {data.state === 'Clear' ? (<video  autoPlay loop muted controls={false}>
-                    <source src='public/assets/clear.mp4' type='video/mp4' />
+                    <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/clear.mp4?alt=media&token=bf5e947a-ce3d-4edb-bd8d-4cba8a620bca' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
                 {data.state === 'Rain' ? (<video  autoPlay loop muted controls={false}>
-                    <source src='public/assets/rain.mp4' type='video/mp4' />
+                    <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/rain.mp4?alt=media&token=ec6a538b-38d9-4c59-bbf3-e5c9056fae7b' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
                 <h2 className="card-title text-center my-5">{data.name}</h2>
@@ -75,6 +75,7 @@ const Current = () => {
                     
                 </div>
                 <div className='m-5'>
+                {data.state === 'Drizzle' ? (<p>ESPERO QUE NO ESTE AFUERA PARA QUE NO TE MOJES</p>) : (<></>)}
                     {data.state === 'Clouds' ? (<p>ESTA NUBLADO, NO TE ALEJES DE CASA POR SI ACASO</p>) : (<></>)}
                     {data.state === 'Clear' ? (<p>ESTA SOLEADO, PUEDES IR AL PARQUE</p>) : (<></>)}
                     {data.state === 'Rain' ? (<p>ESPERO QUE NO ESTE AFUERA PARA QUE NO TE MOJES</p>) : (<></>)}

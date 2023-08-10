@@ -64,27 +64,28 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-white">
 
-                        <li className="nav-item dropdown">
+                    <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle  text-white" href="#" role="button" data-bs-toggle="dropdown" >
                                 Ciudades
 
                             </a>
-
-                           {
-                             citys.length!==0?
-                              ( <ul className="dropdown-menu">
-                              { citys.map((city) => (
-                                   <li key={city}>
-                                       <Link to={`./Card/${city}`} className="dropdown-item">{city}</Link>
-                                   </li>
-                               ))
+                          
+                              {
+                                 citys.length!==0?
+                                 (  <ul className="dropdown-menu">
+                                    { citys.map((city) => (
+                                        <li>
+                                            <Link to={`./Card/${city}`} className="dropdown-item">{city}</Link>
+                                        </li>
+                                    ))}
+                                    </ul>
+                                 ):
+                                 (<></>)
                               }
-                              </ul>):
-                              (<span>No hay Ciudades guardadas</span>)
                             
-                           }
 
                         </li>
+
 
 
                     </ul>
