@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React,{ useState, useEffect } from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
@@ -64,7 +63,7 @@ const Card = () => {
 
     return (
         <div className='col d-flex justify-content-center my-5'>
-        <div className="card bg-primary text-white" style={{ width: '30rem', height: '600px' }}>
+        <div className="card bg-primary text-white" style={{ width: '35rem', height: '800px' }}>
             {data.state === 'Drizzle' ? (
                 <video className='video-fluid' autoPlay loop muted controls={false}>
                     <source src='public/assets/drizzle.mp4' type='video/mp4' />
@@ -74,7 +73,7 @@ const Card = () => {
                 (<></>)}
             {data.state === 'Clouds' ? (
                 <video className='video-fluid' autoPlay loop muted controls={false}>
-                    <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/drizzle.mp4?alt=media&token=67b96842-e00d-4746-ba4f-89e10ab97801' type='video/mp4' />
+                    <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/cloud.mp4?alt=media&token=a94d30f2-ba5c-45cc-8f74-0a3c6d362c0b' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>
             ) :
@@ -103,7 +102,7 @@ const Card = () => {
                 {data.state === 'Clear' ? (<p>ESTA SOLEADO, PUEDES IR AL PARQUE</p>) : (<></>)}
                 {data.state === 'Rain' ? (<p>ESPERO QUE NO ESTE AFUERA PARA QUE NO TE MOJES</p>) : (<></>)}
             </div>
-            <p>Velocidad del viento: {data.speed} km/h</p>
+            <p className='m-5'>Velocidad del viento: {data.speed} km/h</p>
             <button className="btn btn-danger" onClick={handleSaveCity}>Guardar</button>
         </div>
         </div>

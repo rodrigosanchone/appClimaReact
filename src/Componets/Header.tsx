@@ -10,7 +10,7 @@ const Header = () => {
     const navigate = useNavigate();
     const [location, setLocation] = useState('');
     const [citys, setCitys] = useState([])
-    const [state, setState] = useState(false);
+  //  const [state, setState] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault()
        if(!location){
@@ -33,21 +33,17 @@ const Header = () => {
 
     }  
 
-    const getData = (): string => {
-        return localStorage.getItem('citys') || "[]";
-    }
+   
 
 
     useEffect(() => {
+        const getData = (): string => {
+            return localStorage.getItem('citys') || "[]";
+        }
         let storage = JSON.parse(localStorage.getItem('citys')||'[]');
         setCitys(storage);
-    }, []);
+    }, [citys]);
 
-    const handleClick = () => {
-        setState(!state);
-        setTimeout(handleClick, 
-            300); // Llama a la función cada segundo
-      }
 
       
 
@@ -72,15 +68,18 @@ const Header = () => {
                           
                               {
                                  citys.length!==0?
-                                 (  <ul className="dropdown-menu">
+                               
+                                 ( 
+                                    <ul className="dropdown-menu">
                                     { citys.map((city) => (
-                                        <li>
+                                        <li key={city}>
                                             <Link to={`./Card/${city}`} className="dropdown-item">{city}</Link>
                                         </li>
                                     ))}
                                     </ul>
                                  ):
-                                 (<></>)
+                                
+                                 (<>No hay ciudades aún</>)
                               }
                             
 

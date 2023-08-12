@@ -13,7 +13,7 @@ const Current = () => {
     const [data, setData] = useState({
         state: '',
         celcius: 10,
-        name: 'Londres',
+        name: '',
         humedity: 10,
         speed: 2
     });
@@ -33,7 +33,7 @@ const Current = () => {
             axios.get(apiUrl)
                 .then(res => {
                     setData({ ...data, state: res.data.weather[0].main, celcius: res.data.main.temp, name: res.data.name, humedity: res.data.main.humidity, speed: res.data.wind.speed })
-                  
+                    console.log(res.data.weather[0].main)
                 })
                 .catch(err => console.log(err));
         }
@@ -41,7 +41,7 @@ const Current = () => {
     }, [])
     return (
         <div className='col d-flex justify-content-center my-5'>
-            <div className="card bg-primary text-white" style={{ width: '30rem', height:'600px' }}>
+            <div className="card bg-primary text-white" style={{ width: '35rem', height: '700px' }}>
                {data.state === 'Drizzle' ? (
                   <video className='video-fluid' autoPlay loop muted controls={false}>
                   <source src='public/assets/drizzle.mp4' type='video/mp4' />
@@ -51,7 +51,7 @@ const Current = () => {
                  (<></>)}
                 {data.state === 'Clouds' ? (
                   <video className='video-fluid' autoPlay loop muted controls={false}>
-                  <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/drizzle.mp4?alt=media&token=67b96842-e00d-4746-ba4f-89e10ab97801' type='video/mp4' />
+                  <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/cloud.mp4?alt=media&token=a94d30f2-ba5c-45cc-8f74-0a3c6d362c0b' type='video/mp4' />
                   Your browser does not support the video tag.
                 </video>
                 ) :
@@ -64,17 +64,14 @@ const Current = () => {
                     <source src='https://firebasestorage.googleapis.com/v0/b/appclima-a1a07.appspot.com/o/rain.mp4?alt=media&token=ec6a538b-38d9-4c59-bbf3-e5c9056fae7b' type='video/mp4' />
                     Your browser does not support the video tag.
                 </video>) : (<></>)}
-                <h2 className="card-title text-center my-5">{data.name}</h2>
+                <h2 className="card-title text-center  my-5">{data.name}</h2>
                 <div className="card-body d-flex justify-content-around">
 
                     <h3>Temperatura: {data.celcius}°</h3>
                     <h3>Humeda: {data.humedity}%</h3>
-
-
-
-                    
+    
                 </div>
-                <div className='m-5'>
+                <div className=''>
                 {data.state === 'Drizzle' ? (<p>ESPERO QUE NO ESTE AFUERA PARA QUE NO TE MOJES</p>) : (<></>)}
                     {data.state === 'Clouds' ? (<p>ESTA NUBLADO, NO TE ALEJES DE CASA POR SI ACASO</p>) : (<></>)}
                     {data.state === 'Clear' ? (<p>ESTA SOLEADO, PUEDES IR AL PARQUE</p>) : (<></>)}
@@ -89,5 +86,3 @@ const Current = () => {
 
 
 export default Current
-
-
