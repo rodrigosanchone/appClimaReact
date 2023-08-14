@@ -54,12 +54,9 @@ const Header = () => {
             className="btn-close"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
-          ></button> 
+          ></button>
         </div>
-      
-      
 
-                        
         <div className="offcanvas-body">
           <div>
             <form className="d-flex " role="search" onSubmit={handleSubmit}>
@@ -81,28 +78,25 @@ const Header = () => {
                 value="Buscar"
               />
             </form>
-             
-           
 
-
-                   {
-                                 citys.length!==0?
-                               
-                                 ( 
-                                    <ul className="list-group my-2">
-                                    { citys.map((city) => (
-                                        <li key={city} className="list-group-item">
-                                            <Link to={`./Card/${city}`} className="dropdown-item">{city}</Link>
-                                        </li>
-                                    ))}
-                                    </ul>
-                                 ):
-                                
-                                 (<>No hay ciudades aún</>)
-                              }
-
- 
-
+            {citys.length !== 0 ? (
+              <ul className="list-group my-2">
+                {citys.map((city) => (
+                  <li key={city} className="list-group-item"  data-bs-dismiss="offcanvas" aria-label="Close">
+                    <Link
+                      to={`./Card/${city}`}
+                      type="button"
+                      className="btn"
+                     
+                    >
+                        {city}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <>No hay ciudades aún</>
+            )}
           </div>
         </div>
       </div>
@@ -134,60 +128,6 @@ const Header = () => {
         </a>
       </div>
     </div>
-
-    /*     <nav className="navbar navbar-expand-lg justify-content-evenly bg-primary">
-
-            <div className="container-fluid">
-                < Link to="/" className="navbar-brand  text-white">Tu clima</Link>
-
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-white">
-
-                    <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle  text-white" href="#" role="button" data-bs-toggle="dropdown" >
-                                Ciudades
-
-                            </a>
-                          
-                              {
-                                 citys.length!==0?
-                               
-                                 ( 
-                                    <ul className="dropdown-menu">
-                                    { citys.map((city) => (
-                                        <li key={city}>
-                                            <Link to={`./Card/${city}`} className="dropdown-item">{city}</Link>
-                                        </li>
-                                    ))}
-                                    </ul>
-                                 ):
-                                
-                                 (<>No hay ciudades aún</>)
-                              }
-                            
-
-                        </li>
-
-
-
-                    </ul>
-
-
-                    <form className="d-flex " role="search" onSubmit={handleSubmit}>
-                        <input name='location' className="form-control me-2" type="search" placeholder="Ingrese ciudad" aria-label="Search" onChange={(e) => { setLocation(e.target.value) }} value={location}/>
-
-                        <input className="btn btn-danger  text-white" type="submit" value="Buscar" />
-
-
-                    </form>
-
-
-                </div>
-            </div>
-        </nav> */
   );
 };
 

@@ -6,6 +6,7 @@ import Header from './Componets/Header';
 //import Encabezado from './Componets/Encabezado'
 import Card from './Componets/Card'
 import Current from './Componets/Current';
+import { Footer } from './Componets/footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css'
@@ -34,7 +35,8 @@ function App() {
       <Route path="/" element={<Current/>}></Route>
       <Route path="/card/:location" element={<Card/>}></Route>
     </Routes>
-   
+     
+     <Footer></Footer>
       
   </Router>
   
